@@ -25,7 +25,7 @@ std::vector<int> collect_proper_devisors(const int value, const int is_perfect)
 
 int sum_proper_devisors(std::vector<int> proper_divisors, int is_perfect)
 {
-  int sum{0L};
+  int sum = 0;
   if (is_perfect == -1)
   {
     for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
