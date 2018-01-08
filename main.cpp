@@ -3,12 +3,32 @@
 #include <string>
 #include <vector>
 
-int main(int argc, char* argv[])
+std::vector<int> collect_proper_devisors(const int value, int is_perfect)
 {
-  if (argc != 2) return 1;
+  std::vector<int> proper_divisors;
+  if (is_perfect == -1 && value == 2)
+  {
+    proper_divisors.push_back(1);
+  }
+  else if (is_perfect == -1 && value > 2)
+  {
+    for (int denominator = 1; denominator != value - 1; ++denominator)
+    {
+      if (value % denominator == 0)
+      {
+        proper_divisors.push_back(denominator);
+      }
+    }
+  }
+  return proper_divisors;
+}
+
+int do_main(const std::vector<std::string> &args)
+{
+  if (args.size() != 2) return 1;
   try
   {
-    const int value{std::stoi(argv[1])};
+    const int value{std::stoi(args[1])};
 
     // Is this a perfect number?
     // -1: unknown
@@ -23,22 +43,7 @@ int main(int argc, char* argv[])
     if (is_perfect == -1 && value == 0) is_perfect = 0;
 
     //Collect the proper divisors
-    std::vector<int> proper_divisors;
-    
-    if (is_perfect == -1 && value == 2)
-    {
-      proper_divisors.push_back(1);
-    }
-    else if (is_perfect == -1 && value > 2)
-    {
-      for (int denominator=1; denominator!=value-1; ++denominator)
-      {
-        if (value % denominator == 0)
-        {
-          proper_divisors.push_back(denominator);
-        }
-      }
-    }
+    std::vector<int> proper_divisors = collect_proper_devisors(value, is_perfect);
 
     //sum the proper divisors, if not known if number is perfect
     int sum{0};
@@ -64,4 +69,11 @@ int main(int argc, char* argv[])
   {
     return 1;
   }
+  return 0;
+}
+
+int main(int argc, char* argv[])
+{
+  const std::vector<std::string> args(argv, argv + argc);
+  return do_main(args);
 }
