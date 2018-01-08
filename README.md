@@ -2,7 +2,7 @@
 
 Branch|[Travis CI](https://travis-ci.org)|[Codecov](https://www.codecov.io)
 ---|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_is_perfect.svg?branch=master)](https://travis-ci.org/richelbilderbeek/correct_cpp_is_perfect)|[![codecov.io](https://codecov.io/github/richelbilderbeek/correct_cpp_is_perfect/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/correct_cpp_is_perfect/branch/master)
+master|[![Build Status](https://travis-ci.org/CarmenIJsebaart/correct_cpp_is_perfect.svg?branch=master)](https://travis-ci.org/CarmenIJsebaart/correct_cpp_is_perfect)|[![codecov.io](https://codecov.io/github/CarmenIJsebaart/correct_cpp_is_perfect/coverage.svg?branch=master)](https://codecov.io/github/CarmenIJsebaart/correct_cpp_is_perfect/branch/master)
 
 [Correct C++](https://github.com/richelbilderbeek/correct_cpp) chapter 'is_perfect'.
 
