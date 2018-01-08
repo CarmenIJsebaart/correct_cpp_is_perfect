@@ -25,7 +25,7 @@ std::vector<int> collect_proper_devisors(const int value, const int is_perfect)
 
 int sum_proper_devisors(std::vector<int> proper_divisors, int is_perfect)
 {
-  int sum{0};
+  int sum{0L};
   if (is_perfect == -1)
   {
     for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
@@ -39,7 +39,7 @@ int is_perfect_number(const int value)
   // -1: unknown
   //  0: false
   //  1: true
-  int is_perfect{-1};
+  int is_perfect = -1;
 
   // Negative values are not perfect
   if (value < 0) is_perfect = 0;
