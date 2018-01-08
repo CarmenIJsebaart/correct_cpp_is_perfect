@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-std::vector<int> collect_proper_devisors(const int value, int is_perfect)
+std::vector<int> collect_proper_devisors(const int value, const int is_perfect)
 {
   std::vector<int> proper_divisors;
   if (is_perfect == -1 && value == 2)
@@ -21,6 +21,16 @@ std::vector<int> collect_proper_devisors(const int value, int is_perfect)
     }
   }
   return proper_divisors;
+}
+
+int sum_proper_devisors(std::vector<int> proper_divisors, int is_perfect)
+{
+  int sum{0};
+  if (is_perfect == -1)
+  {
+    for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
+  }
+  return sum;
 }
 
 int do_main(const std::vector<std::string> &args)
@@ -46,11 +56,7 @@ int do_main(const std::vector<std::string> &args)
     std::vector<int> proper_divisors = collect_proper_devisors(value, is_perfect);
 
     //sum the proper divisors, if not known if number is perfect
-    int sum{0};
-    if (is_perfect == -1)
-    {
-      for (const int proper_divisor: proper_divisors) { sum += proper_divisor; }
-    }
+    int sum = sum_proper_devisors(proper_divisors, is_perfect);
     if (is_perfect == -1 && sum == value) is_perfect = 1;
     if (is_perfect == -1) is_perfect = 0;
 
