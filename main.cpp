@@ -86,8 +86,8 @@ int do_main(const std::vector<std::string> &args)
 int main(int argc, char* argv[])
 {
   assert(do_main( { "is_perfect" } ) == 1);
-  assert(do_main( { "is_perfect", "12" } ) == 1);
-  assert(do_main( { "is_perfect", "6" } ) == 1);
+  assert(do_main( { "is_perfect", "12" } ) == 0);
+  assert(do_main( { "is_perfect", "6" } ) == 0);
   assert(do_main( { "is_perfect", "nonsense" } ) == 1);
   assert(do_main( { "is_perfect", "6", "28" } ) == 1);
   assert(do_main( { "is_perfect", "6413654546542121312" } ) == 1);
